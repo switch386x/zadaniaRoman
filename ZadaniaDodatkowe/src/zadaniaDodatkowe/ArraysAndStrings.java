@@ -10,7 +10,7 @@ public class ArraysAndStrings {
 	 * implement an algorithm to determine if a string has all unique characters.
 	 */
 	private boolean uniqueCharactersBit(String str){
-		int checker = 0; //a-z string
+		int checker = 0;
 		
 		for(int i = 0; i < str.length(); i++){
 			int bitAtIndex = str.charAt(i) - 'a';
@@ -20,12 +20,15 @@ public class ArraysAndStrings {
 		}
 		return true;	
 	}
-	protected static void displayUniqueCharacters(String input){
+	
+	private static void displayUniqueCharacters(String input){
 		ArraysAndStrings test = new ArraysAndStrings();
 		if(test.uniqueCharactersBit(input))
 			System.out.println("unique character containing string");
 		else
+		{
 			System.out.println("duplicate character containing string");
+		}
 	}
 	//1.1/>
 	
@@ -97,12 +100,9 @@ public class ArraysAndStrings {
 	/*
 	 * there are three types of edits that can be performed on strings : insert a character, remove a character or replace a character.
 	 * Given two strings write a function to check if they are one edit or zero edits away
+	 * I DONT UNDERSTAND THIS TASK
 	 */
-	
-	
-	
 	//1.5/>
-	
 	
 	//<1.6
 	/*
@@ -145,59 +145,136 @@ public class ArraysAndStrings {
 	
 	//<1.7
 	/*
-	 * Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, 
+	 * Given an image represented by an NxN matrix, where each pixel in the image is n = 4 bytes, 
 	 * write a method to rotate the image by 90 degrees. Can you do this in place?
+	 * each pixel in the image is 4 bytes - that means that the matrix is 4x4? I assumed so, therefore n = 4.
 	 */
-	private static void rotate(int[][] matrix, int n) {
-	    for (int layer = 0; layer < n / 2; ++layer) {
-	        int first = layer;
-	        int last = n - 1 - layer;
-	        for(int i = first; i < last; ++i) {
-	            int offset = i - first;
-	            int top = matrix[first][i]; // save top
-
-	            // left -> top
-	            matrix[first][i] = matrix[last-offset][first];          
-
-	            // bottom -> left
-	            matrix[last-offset][first] = matrix[last][last - offset]; 
-
-	            // right -> bottom
-	            matrix[last][last - offset] = matrix[i][last]; 
-
-	            // top -> right
-	            matrix[i][last] = top; // right <- saved top
-	        }
-	    }
-	}
 	
+	private static void rotateMatrix90Degree(int matrix[][],int n){
+		
+		int matrixLength = n - 1;
+		
+		for (int i = 0; i <= (matrixLength/2); i++){
+			for (int j = i; j < matrixLength-i; j++){
+				int firstSwap = matrix[i][j];
+				int secondSwap = matrix[j][matrixLength-i];
+				int thirdSwap = matrix[matrixLength-i][matrixLength-j];
+				int fourthSwap = matrix[matrixLength-j][i];
+				
+				matrix[j][matrixLength-i] = firstSwap;
+				matrix[matrixLength-i][matrixLength-j] = secondSwap;
+				matrix[matrixLength-j][i] = thirdSwap;
+				matrix[i][j] = fourthSwap;		
+			}
+		}
+	}
+		
+	private static void printMatrix(int matrix[][]){
+	
+		for (int i = 0; i < matrix.length; i++){
+			for (int j = 0; j < matrix[0].length; j++){
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
 	
 	//1.7/>
 	
+	//<1.8
+	/*
+	 * Write an algorithm such that if an element in an MxN matrix is 0 its entire row and column are set to 0
+	 */
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main (String args[]){
-		displayUniqueCharacters("ab"); //dummy running bitswitch solution <1.1/>
-		System.out.println(arePermutations("hello","helol"));//<1.2/>
-		URLifyString(" Hello   World My  Friend ");//<1.3/>
-		stringCompression("aa");
+	private static void setMatrixValuesToZero(int [][] matrix, int a, int b){
+		
+		int row [] = new int [a];
+		int column [] = new int [b]; // can i design this algorith size sensitive any other way??
+		
+		for (int i = 0 ; i < a; i++){
+			row[i] = 1;
+		}
+		
+		for (int i = 0; i < b; i++){
+			column[i] = 1;
+		}
+		
+		for (int i = 0; i < a; i++){
+			for (int j = 0; j < b; j++){	
+				if(matrix[i][j] == 0){	
+					row[i] = 0;
+					column[j] = 0;
+				}
+			}
+		}
+		
+		for (int i = 0; i < a; i++){
+			for (int j = 0; j < b; j++){
+				if (row[i] == 0 || column[j] == 0){
+					matrix[i][j] = 0;
+				}
+					
+			}
+		}
+		
+		for (int i = 0; i < a; i++){
+			for (int j = 0; j < b; j++){
+				System.out.print(matrix[i][j] + " ");
+			}
+			System.out.println();
+		}
 		
 	}
 	
+	//1.8/>
+	
+	//<1.9
+	/*
+	 * Assume you have a method isSubstring which checks if one word is a substring of the other one. Given two strings s1 and s2 write
+	 * code to check if s2 is a rotation of s1 using only one call to isSubstring.
+	 * 
+	 */
+	
+	private static boolean isRotation(String s1, String s2){
+		int s1len = s1.length();
+		if (s1len == s2.length()){
+			String s1s1 = s1 + s1;
+			return isSubstring(s1s1,s2);
+		}else
+		{
+			return false;
+		}
+	}
+	
+	private static boolean isSubstring(String s1, String s2){
+		if(s1.contains(s2)){
+			System.out.println("substring noticed");
+			return true;
+		}else
+		{
+			System.out.println("substring unnnoticed");
+			return false;
+		}
+	}
+		
+	//1.9/>
+	
+	public static void main (String args[]){
+		displayUniqueCharacters("ab"); //<1.1/>
+		System.out.println(arePermutations("hello","helol"));//<1.2/>
+		URLifyString(" Hello   World My  Friend ");//<1.3/>
+		stringCompression("aa");//<1.5/>
+		//<1.7
+		int [][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+		printMatrix(matrix);
+		rotateMatrix90Degree(matrix,4);
+		printMatrix(matrix);
+		//1.7/>
+		//<1.8
+		int [][] matrix2 = {{1,1,1,1},{1,0,1,1},{1,1,1,1}};
+		setMatrixValuesToZero(matrix2,3,4);
+		//1.8/>
+		isRotation("sabc", "bcad"); //<1.9/>
+}
 }
