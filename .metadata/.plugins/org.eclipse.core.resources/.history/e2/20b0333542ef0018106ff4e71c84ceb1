@@ -1,0 +1,67 @@
+package zadaniaDodatkowe;
+
+import java.util.Arrays;
+
+public class ArraysAndStrings {
+	//<1.1
+	//solution without using data structures (bitswitch) + no use of static in the checking function
+	boolean uniqueCharactersBit(String str){
+		int checker = 0; //a-z string
+		
+		for(int i = 0; i < str.length(); i++){
+			int bitAtIndex = str.charAt(i) - 'a';
+			if((checker & (1 << bitAtIndex)) > 0)
+				return false;
+			checker = checker | (1 << bitAtIndex);
+		}
+		return true;	
+	}
+	protected static void displayUniqueCharacters(String input){
+		ArraysAndStrings test = new ArraysAndStrings();
+		if(test.uniqueCharactersBit(input))
+			System.out.println("unique string");
+		else
+			System.out.println("duplicate string");
+	}
+	//1.1/>
+	//solution using additional data structures ?? hashmap?	
+	
+	//<1.2
+	
+	private static final char[] sortedChars(String input){
+		char [] chars = input.toCharArray();
+		Arrays.sort(chars);
+	}
+	private static boolean containsPermutation(String first, String second){
+		char [] firstChars = sortedChars(first);
+		char [] secondChars = sortedChars(second);
+		return Arrays.equals(sortedChars(first), sortedChars(second));
+	}
+	
+	//1.2/>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main (String args[]){
+		displayUniqueCharacters("ab"); //dummy running bitswitch solution <1.1/>
+	}
+	
+}
