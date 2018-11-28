@@ -190,7 +190,7 @@ public class ArraysAndStrings {
 	private static void setMatrixValuesToZero(int [][] matrix, int a, int b){
 		
 		int row [] = new int [a];
-		int column [] = new int [b]; // can i design this algorithm size sensitive any other way??
+		int column [] = new int [b]; // can i design this algorith size sensitive any other way??
 		
 		for (int i = 0 ; i < a; i++){
 			row[i] = 1;
@@ -247,7 +247,6 @@ public class ArraysAndStrings {
 		}
 	}
 	
-	
 	private static boolean isSubstring(String s1, String s2){
 		if(s1.contains(s2)){
 			System.out.println("substring noticed");
@@ -260,44 +259,7 @@ public class ArraysAndStrings {
 	}
 		
 	//1.9/>
-	//<Rozwiazania Review>
 	
-	/*String str = "aad sdf sdf fg";
-	str = str.replaceAll(" ", "%20");
-	System.out.println(str);
-
-
-	String str2 = "abBcdfgr";
-	Set<Character> resultSet = new HashSet<>();
-	for (int i = 0; i < str2.length(); i++) {
-	    resultSet.add(str2.charAt(i));
-	}
-	System.out.println(str2.length()==resultSet.size());
-
-	String s1 = "hello";
-	String s2 = "loleh";
-	System.out.println(isPerm(s1, s2));
-
-
-	private boolean isPerm(String s1, String s2) {
-	    if (s1.length() == s2.length()) {
-	        char s1Tmp[] = s1.toCharArray();
-	        Arrays.sort(s1Tmp);
-	        char s2Tmp[] = s2.toCharArray();
-	        Arrays.sort(s2Tmp);
-
-	        for (int i = 0; i < s1Tmp.length; i++) {
-	            if (!(s1Tmp[i] == s2Tmp[i])){
-	                return false;
-	            }
-	        }
-	        return true;
-	    } else {
-	        return false;
-	    }
-	}
-
-	*/
 	public static void main (String args[]){
 		displayUniqueCharacters("ab"); //<1.1/>
 		System.out.println(arePermutations("hello","helol"));//<1.2/>

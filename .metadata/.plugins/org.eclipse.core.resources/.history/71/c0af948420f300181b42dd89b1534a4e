@@ -190,7 +190,7 @@ public class ArraysAndStrings {
 	private static void setMatrixValuesToZero(int [][] matrix, int a, int b){
 		
 		int row [] = new int [a];
-		int column [] = new int [b]; // can i design this algorithm size sensitive any other way??
+		int column [] = new int [b]; // can i design this algorith size sensitive any other way??
 		
 		for (int i = 0 ; i < a; i++){
 			row[i] = 1;
