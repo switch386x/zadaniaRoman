@@ -7,7 +7,6 @@ import java.util.Map;
 
 //TODO : METODY PUBLIC (zewnetrzne)
 //TODO : JUNIT
-//TODO : NAPRAWA METODY arePermutations
 public class ArraysAndStrings {
 	//<1.1
 	/*
@@ -118,7 +117,7 @@ public class ArraysAndStrings {
 	public String stringCompression(String s){
 		
 		int initialLength = s.length();
-		String compressedString = ""; // fixed mistake of putting space in front of the result string
+		String compressedString = " ";
 		char lastChar = s.charAt(0);
 		int charCount = 1;
 		

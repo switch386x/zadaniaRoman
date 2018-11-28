@@ -4,16 +4,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-
-//TODO : METODY PUBLIC (zewnetrzne)
-//TODO : JUNIT
-//TODO : NAPRAWA METODY arePermutations
 public class ArraysAndStrings {
 	//<1.1
 	/*
 	 * implement an algorithm to determine if a string has all unique characters.
 	 */
-	public boolean uniqueCharactersBit(String str){
+	private boolean uniqueCharactersBit(String str){
 		int checker = 0;
 		
 		for(int i = 0; i < str.length(); i++){
@@ -25,7 +21,7 @@ public class ArraysAndStrings {
 		return true;	
 	}
 	
-	public void displayUniqueCharacters(String input){
+	private static void displayUniqueCharacters(String input){
 		ArraysAndStrings test = new ArraysAndStrings();
 		if(test.uniqueCharactersBit(input))
 			System.out.println("unique character containing string");
@@ -40,7 +36,7 @@ public class ArraysAndStrings {
 	/*
 	 * given the two strings, write a method to decide if one is a permutation of the other.
 	 */
-	public boolean arePermutations(String s1, String s2){
+	private static boolean arePermutations(String s1, String s2){
 		Map<Character,Integer> permutationMap = new HashMap<Character,Integer>();
 		
 		for (int i = 0; i != s1.length(); i++){
@@ -81,7 +77,7 @@ public class ArraysAndStrings {
 	 * 
 	 */
 	
-	public String URLifyString(String s){
+	private static String URLifyString(String s){
 		
 		char array[] = s.toCharArray();
 		StringBuilder sb = new StringBuilder();
@@ -115,10 +111,10 @@ public class ArraysAndStrings {
 	 * You can assume the string has only uppercase and lowercase letters (a-z),
 	 */
 	
-	public String stringCompression(String s){
+	public static String stringCompression(String s){
 		
 		int initialLength = s.length();
-		String compressedString = ""; // fixed mistake of putting space in front of the result string
+		String compressedString = " ";
 		char lastChar = s.charAt(0);
 		int charCount = 1;
 		
@@ -154,7 +150,7 @@ public class ArraysAndStrings {
 	 * each pixel in the image is 4 bytes - that means that the matrix is 4x4? I assumed so, therefore n = 4.
 	 */
 	
-	public void rotateMatrix90Degree(int matrix[][],int n){
+	private static void rotateMatrix90Degree(int matrix[][],int n){
 		
 		int matrixLength = n - 1;
 		
@@ -173,7 +169,7 @@ public class ArraysAndStrings {
 		}
 	}
 		
-	public static void printMatrix(int matrix[][]){
+	private static void printMatrix(int matrix[][]){
 	
 		for (int i = 0; i < matrix.length; i++){
 			for (int j = 0; j < matrix[0].length; j++){
@@ -240,7 +236,7 @@ public class ArraysAndStrings {
 	 * 
 	 */
 	
-	public boolean isRotation(String s1, String s2){
+	private static boolean isRotation(String s1, String s2){
 		int s1len = s1.length();
 		if (s1len == s2.length()){
 			String s1s1 = s1 + s1;
