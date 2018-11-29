@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ArraysAndStringsTest" project="ZadaniaDodatkowe" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="zadaniaDodatkowe.ArraysAndStringsTest" time="0.001">
+    <testcase name="testRotateMatrix90Degree" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.001"/>
+    <testcase name="testIsRotation" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.0"/>
+    <testcase name="testUniqueCharactersBit" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.0"/>
+    <testcase name="testArePermutation" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.0"/>
+    <testcase name="testURLifyString" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.0"/>
+    <testcase name="testSetMatrixValuesToZero" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.0"/>
+    <testcase name="testStringCompression" classname="zadaniaDodatkowe.ArraysAndStringsTest" time="0.0"/>
+  </testsuite>
+</testrun>

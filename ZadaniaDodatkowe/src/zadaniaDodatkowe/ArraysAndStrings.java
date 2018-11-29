@@ -1,13 +1,7 @@
 package zadaniaDodatkowe;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
-
-//TODO : METODY PUBLIC (zewnetrzne)
-//TODO : JUNIT
-//TODO : NAPRAWA METODY arePermutations
 public class ArraysAndStrings {
 	//<1.1
 	/*
@@ -29,8 +23,7 @@ public class ArraysAndStrings {
 		ArraysAndStrings test = new ArraysAndStrings();
 		if(test.uniqueCharactersBit(input))
 			System.out.println("unique character containing string");
-		else
-		{
+		else{
 			System.out.println("duplicate character containing string");
 		}
 	}
@@ -40,7 +33,7 @@ public class ArraysAndStrings {
 	/*
 	 * given the two strings, write a method to decide if one is a permutation of the other.
 	 */
-	public boolean arePermutations(String s1, String s2){
+	/*public boolean arePermutations(String s1, String s2){
 		Map<Character,Integer> permutationMap = new HashMap<Character,Integer>();
 		
 		for (int i = 0; i != s1.length(); i++){
@@ -71,7 +64,30 @@ public class ArraysAndStrings {
 		System.out.println(permutationMap.toString());
 		return true;
 	}
-	
+	*/
+	public boolean arePermutation(String s1, String s2){
+		
+		if (s1.length() != s2.length()){
+			System.out.println("different amount of characters");
+			return false;
+			}
+			else{
+			char c1[] = s1.toCharArray();
+			char c2[] = s2.toCharArray();
+				
+			Arrays.sort(c1);
+			Arrays.sort(c2);
+					
+		        for (int i = 0; i < c1.length; i++) {
+		            if (c1[i] != c2[i]){
+		            	System.out.println("not a permutation");
+		            	return false;
+		            	}
+		            }
+		        System.out.println("permutation");
+		        return true;
+		    }
+	}
 	//1.2/>
 	
 	//<1.3
@@ -89,8 +105,7 @@ public class ArraysAndStrings {
 		for (int i = 0; i < array.length; i++){
 			if (array[i] == 32)
 				sb.append("%20");
-			else
-			{
+			else{
 				sb.append(array[i]);
 			}
 		}
@@ -126,13 +141,11 @@ public class ArraysAndStrings {
 			System.out.println(s);
 			return s;
 			}
-		else
-		{
+		else{
 			for (int i = 1; i < initialLength; i++){
 				if (s.charAt(i) == lastChar)
 					charCount ++;
-				else
-				{
+				else{
 					compressedString += Character.toString(lastChar) + Integer.toString(charCount);
 					lastChar = s.charAt(i);
 					charCount = 1;
@@ -154,9 +167,11 @@ public class ArraysAndStrings {
 	 * each pixel in the image is 4 bytes - that means that the matrix is 4x4? I assumed so, therefore n = 4.
 	 */
 	
-	public void rotateMatrix90Degree(int matrix[][],int n){
+	public int[][] rotateMatrix90Degree(int matrix[][],int n){
 		
 		int matrixLength = n - 1;
+		
+		printMatrix(matrix);
 		
 		for (int i = 0; i <= (matrixLength/2); i++){
 			for (int j = i; j < matrixLength-i; j++){
@@ -171,6 +186,8 @@ public class ArraysAndStrings {
 				matrix[i][j] = fourthSwap;		
 			}
 		}
+		printMatrix(matrix);
+		return matrix;
 	}
 		
 	public static void printMatrix(int matrix[][]){
@@ -191,7 +208,7 @@ public class ArraysAndStrings {
 	 * Write an algorithm such that if an element in an MxN matrix is 0 its entire row and column are set to 0
 	 */
 	
-	public void setMatrixValuesToZero(int [][] matrix, int a, int b){
+	public int[][] setMatrixValuesToZero(int [][] matrix, int a, int b){
 		
 		int row [] = new int [a];
 		int column [] = new int [b]; // can i design this algorithm size sensitive any other way??
@@ -217,18 +234,11 @@ public class ArraysAndStrings {
 			for (int j = 0; j < b; j++){
 				if (row[i] == 0 || column[j] == 0){
 					matrix[i][j] = 0;
-				}
-					
+				}				
 			}
-		}
-		
-		for (int i = 0; i < a; i++){
-			for (int j = 0; j < b; j++){
-				System.out.print(matrix[i][j] + " ");
-			}
-			System.out.println();
-		}
-		
+		}		
+		printMatrix(matrix);
+		return matrix;
 	}
 	
 	//1.8/>
@@ -303,20 +313,24 @@ public class ArraysAndStrings {
 	}
 */
 	public static void main (String args[]){
-		displayUniqueCharacters("ab"); //<1.1/>
+	/*	displayUniqueCharacters("ab"); //<1.1/>
 		System.out.println(arePermutations("hello","helol"));//<1.2/>
 		URLifyString(" Hello   World My  Friend ");//<1.3/>
 		stringCompression("aa");//<1.5/>
 		//<1.7
-		int [][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+		
 		printMatrix(matrix);
-		rotateMatrix90Degree(matrix,4);
-		printMatrix(matrix);
+
+		
 		//1.7/>
 		//<1.8
 		int [][] matrix2 = {{1,1,1,1},{1,0,1,1},{1,1,1,1}};
 		setMatrixValuesToZero(matrix2,3,4);
 		//1.8/>
 		isRotation("sabc", "bcad"); //<1.9/>
+		*/
+		//rotateMatrix90Degree(matrix,4);
+		
+		
 }
 }

@@ -849,3 +849,9 @@ org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://do
 
 !ENTRY org.eclipse.jface.text 2 0 2018-11-28 16:16:43.183
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-29 13:41:36.188
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-29 13:41:36.189
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

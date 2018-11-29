@@ -1,0 +1,33 @@
+package zadaniaDodatkowe;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ArraysAndStringsTest {
+
+	@Test
+	public void testUniqueCharactersBit() {
+		
+		//testdata
+		
+		String testStr = "abcoeaw";
+		ArraysAndStrings test = new ArraysAndStrings();
+		assertEquals(test.uniqueCharactersBit(testStr),false);	
+	}
+	
+	@Test
+	public void testArePermutation(){
+		
+		//testdata
+		
+		String testStr1 = "abc";
+		String testStr2 = "cbe";
+		
+		ArraysAndStrings test = new ArraysAndStrings();
+		equals(test.arePermutation(testStr1, testStr2));
+		
+		
+	}
+
+}

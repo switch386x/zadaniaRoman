@@ -1,0 +1,16 @@
+package zadaniaDodatkowe;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ArraysAndStringsTest {
+
+	@Test
+	public void testUniqueCharactersBit() {
+		//testdata
+		String testStr = "abcoeaw"
+		fail("Not yet implemented");
+	}
+
+}
