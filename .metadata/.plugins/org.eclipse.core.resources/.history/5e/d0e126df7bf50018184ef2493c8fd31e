@@ -1,0 +1,37 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Deck<T extends Card> {
+
+	private ArrayList<T> cards = new ArrayList<T>();
+	private int dealtIndex = 0;
+
+	public void setDeckOfCards(ArrayList<T> deckOfCards) {
+
+	}
+
+	public void shuffle() {
+		Collections.shuffle(this.cards);
+	}	
+	
+	public int remainingCards(){
+		return cards.size() - dealtIndex;
+	}
+	
+	public void resetDeck(){
+		cards.clear();
+	}
+	
+	public T[] dealHand(int number){
+		
+		
+	}
+	
+	public T dealCard(){
+		
+	}
+	
+	
+}

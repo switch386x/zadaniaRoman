@@ -1,0 +1,51 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Deck <T extends Hand>{
+	
+/**	public void populateDeck(){
+		
+		for (Suit suit : Suit.values()){
+			for (Rank rank : Rank.values()){
+				Card card = new Card(rank,suit);
+				card.markAvailable();
+				
+			}
+		}
+	}
+
+*/
+
+	private ArrayList<T> cards;
+	private int firstUndealt = 0;
+	
+	public void setDeckOfCards(ArrayList<T> deckOfCards){
+		
+	}
+
+	public void shuffle() {
+		Collections.shuffle(this.cards);
+	}	
+	
+	public int remainingCards(){
+		return cards.size() - firstUndealt;
+	}
+	
+	public void resetDeck(){
+		cards.clear();
+	}
+	
+	
+	public T[] dealHand(int number){
+		
+		
+	}
+	
+	public T dealCard(){
+		
+	}
+	
+	
+}

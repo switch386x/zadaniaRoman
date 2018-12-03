@@ -1,0 +1,48 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Deck extends Hand {
+	
+	public void populate(){
+		
+		for (Suit suit : Suit.values()){
+			for (Rank rank : Rank.values()){
+				Card card = new Card(rank,suit);
+				card.markAvailable();
+			}
+		}
+	}
+
+	private ArrayList<T> cards = new ArrayList<T>();
+	private int dealtIndex = 0;
+
+	public Deck (int numberOfCards){
+		for ()
+	}
+
+	public void shuffle() {
+		Collections.shuffle(this.cards);
+	}	
+	
+	public int remainingCards(){
+		return cards.size() - dealtIndex;
+	}
+	
+	public void resetDeck(){
+		cards.clear();
+	}
+	
+	
+	public T[] dealHand(int number){
+		
+		
+	}
+	
+	public T dealCard(){
+		
+	}
+	
+	
+}

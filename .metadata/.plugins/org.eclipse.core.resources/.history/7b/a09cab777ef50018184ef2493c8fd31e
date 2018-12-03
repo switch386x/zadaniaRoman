@@ -1,0 +1,37 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+
+public class Hand extends Card {
+
+	public Hand(Rank rank, Suit suit) {
+		super(rank, suit);
+		// TODO Auto-generated constructor stub
+	}
+
+	private ArrayList<Card> cards = new ArrayList<Card>();
+
+	public void addCard(Card card) {
+		cards.add(card);
+	}
+	
+	public String showHand(){
+		String str = "";
+		for (Card c : cards){
+			str += c.toString() + " \n";
+		}
+		return str;
+	}
+	
+	public boolean giveCard(T card, Hand<T> otherHand){
+		if (!cards.contains(card)){
+			return false;
+		}else{
+			cards.remove(card);
+			otherHand.addCard(card);
+			return true;
+		}
+	}
+	
+
+}

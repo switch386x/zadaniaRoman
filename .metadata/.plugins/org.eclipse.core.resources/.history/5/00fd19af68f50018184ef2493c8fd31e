@@ -1,0 +1,21 @@
+package DeckOfCards;
+
+public class Card {
+
+	private Suit suit;
+	private Rank rank;
+	private boolean faceUp;
+	
+	public Card(Rank rank, Suit suit){
+		this.rank = rank;
+		this.suit = suit;
+	}
+	
+	public String getSuitName(){
+		return suit.getSuitName();
+	}
+	
+	public int getRankValue(){
+		return rank.getRankValue();
+	}
+}

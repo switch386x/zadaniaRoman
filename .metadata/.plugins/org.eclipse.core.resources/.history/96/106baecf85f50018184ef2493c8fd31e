@@ -1,0 +1,31 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Deck {
+	
+	private Card [] myCards;
+	
+	public Deck(boolean shuffle){
+		this.myCards = new Card[52];
+	}
+
+
+	public void populate(){
+		
+		for (Suit suit : Suit.values()){
+			for (Rank rank : Rank.values()){
+				this.myCards[c] = new Card(Rank.values(),Suit.values());
+				card.markAvailable();
+				
+			}
+		}
+	}
+	
+	public void shuffle(){
+		Collections.shuffle();
+	}
+	
+	
+}

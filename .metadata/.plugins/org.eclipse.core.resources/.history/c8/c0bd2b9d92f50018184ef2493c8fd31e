@@ -1,0 +1,41 @@
+package DeckOfCards;
+
+public abstract class Card {
+
+	private Suit suit;
+	private Rank rank;
+	private boolean available = true;
+	
+	public Card(Rank rank, Suit suit){
+		this.rank = rank;
+		this.suit = suit;
+	}
+	
+	public String getSuitName(){
+		return suit.getSuitName();
+	}
+	
+	public int getRankValue(){
+		return rank.getRankValue();
+	}
+	
+	public void markAvailable(){
+		available = true;
+	}
+	
+	public void markUnavailable(){
+		available = false;
+	}
+	
+	public boolean isAvailable(){
+		return available;
+	}
+	
+	public String toString(){
+		String s = "";
+		s += rank.getRankValue() + "of" + suit.getSuitName(); // po co mi ta metoda, konkatenacja stringow ma byc przy uzyciu stringbuildera
+		return s;
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package DeckOfCards;
+
+public class Hand <T extends Card>{
+
+	private ArrayList<T> cards = new ArrayList<T>();
+}

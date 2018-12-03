@@ -1,0 +1,40 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+
+public class Hand<T extends Card> {
+
+	private ArrayList<T> cards = new ArrayList<T>();
+
+	public int score() {
+		int score = 0;
+		for (T card : cards) {
+			score += card.getRankValue();
+		}
+		return score;
+	}
+
+	public void addCard(T card) {
+		cards.add(card);
+	}
+	
+	public String showHand(){
+		String str = "";
+		for (Card c : cards){
+			str += c.toString() + " \n";
+		}
+		return str;
+	}
+	
+	public boolean giveCard(T card, Hand<T> otherHand){
+		if (!cards.contains(card)){
+			return false;
+		}else{
+			cards.remove(card);
+			otherHand.addCard(card);
+			return true;
+		}
+	}
+	
+
+}

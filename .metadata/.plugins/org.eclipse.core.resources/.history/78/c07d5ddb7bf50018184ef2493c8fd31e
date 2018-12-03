@@ -1,0 +1,9 @@
+package DeckOfCards;
+
+public class CardFactory {
+	
+	public static Card createCard(int cardNumber){
+		
+		int cardSuit 
+	}
+}

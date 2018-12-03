@@ -1,0 +1,24 @@
+package DeckOfCards;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Deck extends Hand {
+	
+	public Deck(Rank rank, Suit suit) {
+		super(rank, suit);
+	}
+
+	public void populate(){
+		
+		for (Suit suit : Suit.values()){
+			for (Rank rank : Rank.values()){
+				Card card = new Card(rank,suit);
+				card.markAvailable();
+				this.addCard(card);
+			}
+		}
+	}
+	
+	
+}
