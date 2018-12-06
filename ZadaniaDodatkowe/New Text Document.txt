@@ -1,0 +1,32 @@
+task 1 : wyzej poziomowo i tak zeby obslugiwalo wszystkie stringi a nie a-z - fix this.
+
+
+formatowanie kodu - else pod ifem - ctrl alt f.
+
+nie uzywac sysoutprintln - log4j lib
+
+
+
+
+1.7 nie dziala - dlaczego ??
+
+tylko dla 1 case
+nierozszerzalne 
+przepisac to zadania zeby bylo bardziej generyczne 
+NIE IN PLACE - stworzyc macierz o tych samych wymiarach i uzupleniac danymi po kolei spelniajacymi algorytm obracania.
+
+int[][] x = {{1,2,3},{1,2,3}}
+x.length zwroci mi liczbe elementow typu {1,2,3}
+x[0].length - zwroci mi liczbe elementow w elemencie typu {1,2,3}
+
+1.6 pola nie uzywane globalnie powinny byc deklarowane w blokach metod ich uzywajacych
+
+
+
+usuwac kod , nie komentowac, czytelnosc
+
+TODO- usun zakomentowany kod 
+formatowanie else pod ifem itp
+1.7 naprawic zeby dzialalo dla tablic o kazdym zestawie wymiarow - na podstawie tego co wysle mi olga, rozwiazanie matematyczne
+1.6 pola globalne etc
+1.8 usunac fory 
