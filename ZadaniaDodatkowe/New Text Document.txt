@@ -25,8 +25,12 @@ x[0].length - zwroci mi liczbe elementow w elemencie typu {1,2,3}
 
 usuwac kod , nie komentowac, czytelnosc
 
-TODO- usun zakomentowany kod 
-formatowanie else pod ifem itp
-1.7 naprawic zeby dzialalo dla tablic o kazdym zestawie wymiarow - na podstawie tego co wysle mi olga, rozwiazanie matematyczne
-1.6 pola globalne etc
-1.8 usunac fory 
+TODO- usun zakomentowany kod done
+formatowanie else pod ifem itp done
+
+1.5
+
+1.7 naprawic zeby dzialalo dla tablic o kazdym zestawie wymiarow - na podstawie tego co wysle mi olga, rozwiazanie matematyczne - nie wyslala, not done
+
+1.6 pola globalne etc done
+1.8 usunac fory  done 

@@ -1,19 +1,20 @@
 package zadaniaDodatkowe;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 public class ArraysAndStringsTest {
 
 	@Test
-	public void testUniqueCharactersBit() {
+	public void testUniqueCharacters() {
 		
 		//testdata
 		String testS1 = "abcoeaw";
 		
 		ArraysAndStrings test = new ArraysAndStrings();
-		assertEquals(test.uniqueCharactersBit(testS1),false);	
+		assertEquals(test.uniqueCharacters(testS1),false);	
 	}
 	
 	@Test
@@ -32,10 +33,34 @@ public class ArraysAndStringsTest {
 	public void testURLifyString(){
 		
 		//testdata
-		String testS1 = "Hello My  Dear   Friend ";
+		String inputTestString = "Hello My  Dear   Friend ";
+		String outputTestString = "Hello%20My%20%20Dear%20%20%20Friend%20";
 		
 		ArraysAndStrings test = new ArraysAndStrings();
-		assertEquals(test.URLifyString(testS1),"Hello%20My%20%20Dear%20%20%20Friend%20");
+		assertEquals(test.URLifyString(inputTestString),outputTestString);
+	}
+	
+	@Test
+	public void testIsEditDistanceOne(){
+	    
+	    //testdata
+	    String testString1 = "bar";
+	    String testString2 = "cro";
+	    String testString3 = "spark";
+	    String testString4 = "psark";
+	    String testString5 = "sparky";
+	    String testString6 = "park";
+	    String testString7 = "bbbbbbspark";
+	    String testString8 = "bspark";
+	    
+	    ArraysAndStrings test = new ArraysAndStrings();
+	    assertEquals(test.isEditDistanceOne(testString1, testString2),false);
+	    assertEquals(test.isEditDistanceOne(testString3, testString4),false);
+	    assertEquals(test.isEditDistanceOne(testString3, testString5),true);
+	    assertEquals(test.isEditDistanceOne(testString3, testString6),true);
+	    assertEquals(test.isEditDistanceOne(testString3, testString7),false);
+	    assertEquals(test.isEditDistanceOne(testString3, testString8),true);
+	    
 	}
 	
 	@Test
@@ -55,12 +80,12 @@ public class ArraysAndStringsTest {
 	public void testRotateMatrix90Degree(){
 		
 		//testdata
-		
-		int [][] testMatrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-		int [][] resultMatrix = {{13,9,5,1},{14,10,6,2},{15,11,7,3},{16,12,8,4}};
+		//NxN dimensional matrix
+		int [][] testMatrix = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
+		int [][] resultMatrix = {{21,16,11,6,1},{22,17,12,7,2},{23,18,13,8,3},{24,19,14,9,4},{25,20,15,10,5}};
 		
 		ArraysAndStrings test = new ArraysAndStrings();
-		assertArrayEquals(test.rotateMatrix90Degree(testMatrix, 4),resultMatrix);		
+		assertArrayEquals(test.rotateMatrix90Degree(testMatrix, 5),resultMatrix);		
 	}
 	
 	
