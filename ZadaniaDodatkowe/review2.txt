@@ -1,0 +1,38 @@
+
+##########################################
+// W tym wypadku mozna tez wlozyc elementy stringa do Seta i porownac rozmiar seta i stringa. Prawdopodobnie Set optymalizuje lepiej porownywanie
+
+public boolean uniqueCharacters(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; i < str.length(); j++) { // nie trzeba tutaj drugirj petli, mozna iterowac sie do i < str.length() -1, a nastepnie robiz porownanie str.charAt(i) == str.charAt(i+1)
+                if (str.charAt(i) == str.charAt(j))
+                    return false;
+            }
+        }
+        return true;
+}
+###########################################
+// sprawdzilam, ze ten algorytm dziala, i wyglada tez dobrze - kod jest zwiezly. Jednak bardzo ciezko mi zrozumiec co sie dzieje. Dlaczego iterujesz sie tylko do polowy rozmiaru macierzy? dlaczego zapamietujesz tylko jedna wartosc - top?
+// bycmoze nazwy zmiennych powinny byc bardziej informatywne. W takich przypadkach warto dodawac tez zdanie wyjasnienia, co sie dzieje.  Dla mnie komentarze
+
+public int[][] rotateMatrix90Degree(int matrix[][], int n) { // zamiast przekazywac n jako parametr mozna wziac rozmiar tablicy, w tym wypadku tablica jest symetryczn NxN wiec nie ma problemu.
+
+        printMatrix(matrix);
+
+        for (int layer = 0; layer < (n / 2); layer++) { // to nie jest ladne, pozniewaz nie wprost rzutujesz wartosc ulamkowa na inta, co powoduje odrzucenie tego co poprzecinku
+            int first = layer;
+            int last = n - 1 - layer;
+            for (int i = first; i < last; i++) {
+                int offset = i - first;
+                int j = last - offset;
+                int top = matrix[first][i]; // save top values
+
+                matrix[first][i] = matrix[j][first];
+                matrix[j][first] = matrix[last][j];
+                matrix[last][j] = matrix[i][last];
+                matrix[i][last] = top; //retrieve top values
+            }
+        }
+        printMatrix(matrix);
+        return matrix;
+}
