@@ -4,21 +4,17 @@
  * All rights reserved.
  */
 
+
+/**
+ * 
+ * @author PILASKOW
+ *
+ */
 public enum Suit {
 
-    SPADE(2),
-    HEART(3),
-    CLUB(1),
-    DIAMOND(4);
+    SPADE,
+    HEART,
+    CLUB,
+    DIAMOND;
     
-    private int suitValue;
-    
-    public int getSuitValue() {
-        return suitValue;
-    }
-    
-    private Suit(int suitValue){
-        suitValue = suitValue;
-    }
 }
-
